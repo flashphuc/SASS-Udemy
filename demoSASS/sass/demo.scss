@@ -1,0 +1,86 @@
+// KHAI BÁO BIẾN
+// biến toàn cục
+$bg-color: blue;
+
+h1 {
+  background-color: $bg-color;
+}
+
+h2 {
+  background-color: $bg-color;
+}
+
+// .section1 h2{
+
+// }
+
+//nesting
+// tối đa 5 hoặc 6 cấp thẻ
+.section1 {
+  h2 {
+    background-color: $bg-color;
+  }
+
+  //button:hover
+  button {
+    background-color: $bg-color;
+    // &: Parents Selector
+    //&: button
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+
+// KẾ THỪA
+//extend
+// .section1: class cha
+// section2: con sẽ kế thừa css từ thằng cha là section1
+
+.section2 {
+  @extend .section1;
+  button {
+    border: 1px solid black;
+    // &:hover {
+    //   background-color: pink;
+    // }
+  }
+}
+
+// placeholder
+%styleSection {
+  h2 {
+    background-color: violet;
+  }
+}
+
+.section3 {
+  @extend %styleSection;
+}
+
+//  Mixin gần giống hàm
+// Không có tham số (param) truyền vào
+@mixin styleSection() {
+  h2 {
+    background-color: aqua;
+  }
+}
+
+.section4 {
+  @include styleSection();
+}
+
+// Mixin có tham số
+@mixin styleSectionNew($bg-color) {
+  // biến cục bộ chỉ dùng bên trong hàm (mixin)
+  h2 {
+    background-color: $bg-color;
+  }
+}
+
+.section4 {
+  @include styleSectionNew(blue);
+}
+.section5 {
+  @include styleSectionNew(purple);
+}

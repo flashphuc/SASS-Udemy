@@ -1,0 +1,40 @@
+h1 {
+  background-color: blue;
+}
+
+h2 {
+  background-color: blue;
+}
+
+.section1 h2, .section2 h2 {
+  background-color: blue;
+}
+
+.section1 button, .section2 button {
+  background-color: blue;
+}
+
+.section1 button:hover, .section2 button:hover {
+  background-color: red;
+}
+
+.section2 button {
+  border: 1px solid black;
+}
+
+.section3 h2 {
+  background-color: violet;
+}
+
+.section4 h2 {
+  background-color: aqua;
+}
+
+.section4 h2 {
+  background-color: blue;
+}
+
+.section5 h2 {
+  background-color: purple;
+}
+/*# sourceMappingURL=demo.css.map */
